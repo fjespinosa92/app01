@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario de Supermercado</title>
+    <!-- Enlazamos la hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Inventario de Supermercado</h1>
+    </header>
+
+    <!-- Formulario para agregar nuevos productos -->
+    <section id="product-form-section">
+        <h2>Agregar Producto</h2>
+        <form id="product-form">
+            <!-- Campo para el nombre del producto -->
+            <label for="product-name">Nombre:</label>
+            <input type="text" id="product-name" name="product-name" required>
+
+            <!-- Campo para la cantidad de productos -->
+            <label for="product-quantity">Cantidad:</label>
+            <input type="number" id="product-quantity" name="product-quantity" required min="1">
+
+            <!-- Campo para la categoría del producto -->
+            <label for="product-category">Categoría:</label>
+            <input type="text" id="product-category" name="product-category" required>
+
+            <!-- Botón para enviar el formulario -->
+            <button type="submit">Agregar</button>
+        </form>
+    </section>
+
+    <!-- Sección que mostrará la lista de productos agregados -->
+    <section id="product-list-section">
+        <h2>Lista de Productos</h2>
+        <ul id="product-list"></ul>
+    </section>
+
+    <!-- Enlazamos el script con la funcionalidad -->
+    <script src="script.js"></script>
+</body>
+</html>
