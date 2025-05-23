@@ -1,0 +1,109 @@
+/*
+ * Hoja de estilos para la webapp de inventario de supermercado
+ * Se utilizan colores suaves y un diseño responsive
+ */
+
+/* ----- Variables de color ----- */
+:root {
+  --color-primario: #2c7be5; /* Azul suave */
+  --color-secundario: #4caf50; /* Verde suave */
+  --color-fondo: #f5f7fa; /* Gris claro */
+  --color-texto: #333333; /* Texto principal */
+  --color-borde: #dddddd; /* Bordes sutiles */
+}
+
+/* ----- Estilos globales ----- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Helvetica, Arial, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  margin-top: 0;
+}
+
+/* Espaciado general para contenedores */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ----- Formulario ----- */
+#product-form {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#product-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+#product-form input,
+#product-form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+#product-form button {
+  background-color: var(--color-primario);
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Efecto hover para botones */
+#product-form button:hover {
+  background-color: var(--color-secundario);
+}
+
+/* ----- Lista de productos ----- */
+#product-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+#product-list li {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+}
+
+/* Responsive: ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+  #product-form {
+    padding: 1rem;
+  }
+
+  #product-form input,
+  #product-form select {
+    font-size: 0.9rem;
+  }
+
+  #product-form button {
+    width: 100%;
+  }
+}
