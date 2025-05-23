@@ -4,11 +4,22 @@
 let productos = [];
 
 // Elementos del DOM
-const form = document.querySelector('form');
+const form = document.getElementById('product-form');
 const inputNombre = document.getElementById('product-name');
-const inputCantidad = document.getElementById('quantity');
-const selectCategoria = document.getElementById('category');
+const inputCantidad = document.getElementById('product-quantity');
+const inputCategoria = document.getElementById('product-category');
 const listaProductos = document.getElementById('product-list');
+
+// Verificar que los elementos del DOM existan para evitar errores
+function elementosDisponibles() {
+  return (
+    form &&
+    inputNombre &&
+    inputCantidad &&
+    inputCategoria &&
+    listaProductos
+  );
+}
 
 // Clave de LocalStorage
 const STORAGE_KEY = 'inventario-productos';
@@ -85,7 +96,7 @@ function manejarEnvio(event) {
 
   const nombre = inputNombre.value.trim();
   const cantidad = inputCantidad.value.trim();
-  const categoria = selectCategoria.value;
+  const categoria = inputCategoria.value.trim();
 
   if (!nombre || !cantidad || !categoria) {
     alert('Por favor complete todos los campos');
@@ -101,6 +112,11 @@ function manejarEnvio(event) {
 
 // Inicializar app al cargar la página
 window.addEventListener('DOMContentLoaded', () => {
+  if (!elementosDisponibles()) {
+    console.error('Error: elementos del DOM no encontrados');
+    return;
+  }
+
   cargarProductos();
   mostrarProductos();
   form.addEventListener('submit', manejarEnvio);
